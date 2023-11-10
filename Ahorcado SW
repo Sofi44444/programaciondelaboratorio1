@@ -1,0 +1,115 @@
+import random		
+IMÁGENES_AHORCADO = ['''		
+  +---+		
+  |   |		
+      |		
+      |		
+      |		
+      |		
+  =========''', '''		
+  +---+		
+  |   |		
+  O   |		
+      |		
+      |		
+      |		
+  =========''', '''		
+  +---+		
+  |   |		
+  O   |		
+  |   |		
+      |		
+      |		
+  =========''', '''		
+  +---+		
+  |   |		
+  O   |		
+ /|   |		
+      |		
+      |		
+  =========''', '''		
+  +---+		
+  |   |		
+  O   |		
+ /|\  |		
+      |		
+      |		
+  =========''', '''		
+  +---+		
+  |   |		
+  O   |		
+ /|\  |		
+ /    |		
+      |		
+  =========''', '''		
+  +---+		
+  |   |		
+  O   |		
+ /|\  |		
+ / \  |		
+      |		
+  =========''']		
+palabras = 'hormiga babuino tejon murcielago oso castor camello gato almeja cobra pantera coyote cuervo ciervo perro burro pato aguila huron zorro rana cabra ganso halcon leon lagarto llama topo mono alce raton mula salamandra nutria buho panda loro paloma piton conejo carnero rata cuervo rinoceronte salmon foca tiburon oveja mofeta perezoso serpiente araña cigüeña cisne tigre sapo trucha pavo tortuga comadreja ballena lobo cebra'.split()import Random
+def ObtenerPalabra(ListaDePalabras)
+  indiceDePalabras=Random.Randint(0,len(ListaDePalabras))-
+
+  return ListaDePalabras[indiceDePalabras]
+
+def mostrarTablero(IMAGENES_AHORACADO,letrasIncorrectas,letrasCorrectas,palabraSecreta):
+    print(IMAGENES_AHORCADO[len(LetrasIncorrectas)])
+    print()
+
+    print('Letras Icorrectas:', end='')
+    for letras in letrasIncorrectas:
+        print(letra, end='')
+    print()
+
+    espaciosVacios='_'*len(palabrasSecreta)
+
+    for i in range(len(palabraSecreta)):
+      if palabraSecreta[i] in letrasCorrectas:
+          espaciosVacios=espaciosVacios[:i]+palabraSecreta[i]+especiosVacios[i+1:]
+
+          for letra in espaciosVacios
+            print(letra, end='')
+          print()
+
+def obtenerintento(letrasProbadas):
+  while true:
+    print('adivina una letra.')
+    intento=input()
+    intento=intento.lower
+    if len(intento)-1:
+      print('por favor introduce una letra.')
+    elif intento in letrasProbadas:
+      print('ya has probado esa letra.por favor ingrese otra')
+    elif intento not in 'abcedfghijklmnñopqrstuvwxyz':
+      print('por favor ingrese una LETRA.')
+    else:
+      return intento
+def jugarDeNuevo():
+  print('¿desea jugar de nuevo?(si o no)')
+  return input().lower().startwith('S')
+
+
+print('A H O R C A D O')
+letrasIncorrectas="
+letrasCorrectas="
+palabraSecreta=obtenerPalabra(words)
+juego terminado=False
+
+while True:
+  mostrarTablero(IMAGENES_AHORCADO,letrasIncorrectas,letrasCorrectas,PalabrasSecreta)
+
+  intento=obtenerIntento('letrasIncorrectas+letrasCorrectas')
+
+  if intento in palabraSecreta:
+    letrasCorrectas=letrasCorrectas+intento
+
+
+  encontrado todasLasLetras=True
+  for in range(len(palabraSecreta)):
+    if palabraSecreta[i]not in letrasCorrectas:
+       encontrado TodasLasLetras=False break
+  if encontrado TodasLasLetras:
+     print('!felicidades¡!la palabra secreta es ''' + palabraSecreta + '''!!GANASTE¡')
